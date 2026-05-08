@@ -25,7 +25,7 @@ services:
       timeout: 3s
       retries: 10
 
-  api:
+api:
     build:
       context: .
       dockerfile: api/Dockerfile
@@ -42,7 +42,7 @@ services:
       - ./migrations:/app/migrations
       - ./alembic.ini:/app/alembic.ini
       - model_artifacts:/app/models
-  command: sh -c "alembic upgrade head && uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload"
+    command: sh -c "alembic upgrade head && uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload"
 
   worker-fast:
     build:
