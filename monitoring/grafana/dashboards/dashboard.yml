@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: "callroute"
+    orgId: 1
+    folder: "CallRoute ML"
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 30
+    options:
+      path: /etc/grafana/provisioning/dashboards
