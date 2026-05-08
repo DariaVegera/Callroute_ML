@@ -105,7 +105,7 @@ def _refund_if_charged(db: Session, task_id: str, user_id: str, cost: Decimal, w
 
 @app.task(
     bind=True,
-    name="worker.tasks.predict_task.run_prediction",
+    name="tasks.predict_task.run_prediction",
     max_retries=3,
     default_retry_delay=5,
     acks_late=True,
