@@ -1,0 +1,15 @@
+celery==5.4.0
+redis==5.0.8
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.35
+pydantic-settings==2.5.2
+pydantic[email]
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+prometheus-client==0.21.0
+catboost==1.2.5
+numpy==1.26.4
+scikit-learn==1.5.2
+transformers==4.44.2
+torch==2.4.1+cpu
+--extra-index-url https://download.pytorch.org/whl/cpu
