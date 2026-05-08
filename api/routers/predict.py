@@ -86,9 +86,16 @@ async def create_prediction(
     await db.flush()
 
     # Отправляем в Celery
-    from worker.celery_app import app as celery_app
-    celery_result = celery_app.send_task(
-        "worker.tasks.predict_task.run_prediction",
+    from celery import Celery
+    import os
+
+    _celery_app = Celery(
+        "callroute",
+        broker=os.environ.get("CELERY_BROKER_URL", "redis://redis:6379/0"),
+        backend=os.environ.get("CELERY_RESULT_BACKEND", "redis://redis:6379/1"),
+    )
+    celery_result = _celery_app.send_task(
+        "tasks.predict_task.run_prediction",
         kwargs={
             "task_id": str(task.id),
             "user_id": str(current_user.id),
