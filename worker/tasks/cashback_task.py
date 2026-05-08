@@ -2,12 +2,12 @@
 Cron-задача: еженедельный кэшбэк на бонусный счёт.
 """
 import logging
-from worker.celery_app import app
+from celery_app import app
 
 logger = logging.getLogger(__name__)
 
 
-@app.task(name="worker.tasks.cashback_task.calculate_weekly_cashback")
+@app.task(name="tasks.cashback_task.calculate_weekly_cashback")
 def calculate_weekly_cashback():
     from sqlalchemy import create_engine, text
     from sqlalchemy.orm import sessionmaker
