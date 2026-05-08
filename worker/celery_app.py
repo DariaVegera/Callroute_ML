@@ -10,9 +10,9 @@ app = Celery(
     broker=broker_url,
     backend=result_backend,
     include=[
-        "worker.tasks.predict_task",
-        "worker.tasks.loyalty_task",
-        "worker.tasks.cashback_task",
+        "tasks.predict_task",
+        "tasks.loyalty_task",
+        "tasks.cashback_task",
     ],
 )
 
@@ -26,17 +26,17 @@ app.conf.update(
     task_reject_on_worker_lost=True,
     worker_prefetch_multiplier=1,  # Не хватать лишние задачи в очередь
     task_routes={
-        "worker.tasks.predict_task.run_prediction": {
+        "tasks.predict_task.run_prediction": {
             "queue": "fast",  # overridden per-call
         },
     },
     beat_schedule={
         "recalculate-loyalty-levels": {
-            "task": "worker.tasks.loyalty_task.recalculate_loyalty",
+            "task": "tasks.loyalty_task.recalculate_loyalty",
             "schedule": 3600.0,  # каждый час
         },
         "weekly-cashback": {
-            "task": "worker.tasks.cashback_task.calculate_weekly_cashback",
+            "task": "tasks.cashback_task.calculate_weekly_cashback",
             "schedule": 604800.0,  # раз в неделю
         },
     },
