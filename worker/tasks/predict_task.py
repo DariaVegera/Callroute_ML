@@ -17,8 +17,8 @@ from celery import Task
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
 
-from worker.celery_app import app
-from worker.ml.model_registry import predict_with_model
+from celery_app import app
+from ml.model_registry import predict_with_model
 from api.core.config import settings
 
 _sync_db_url = settings.database_url.replace("postgresql+asyncpg", "postgresql+psycopg2")
