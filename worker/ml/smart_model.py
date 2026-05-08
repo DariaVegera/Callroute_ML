@@ -6,7 +6,7 @@ SmartModel — rubert-tiny2 fine-tuned classifier.
 import numpy as np
 from typing import Optional
 
-from ml.fast_model import INTENT_LABELS, INTENT_TO_QUEUE, INTENT_TO_PRIORITY
+from worker.ml.fast_model import INTENT_LABELS, INTENT_TO_QUEUE, INTENT_TO_PRIORITY
 
 
 class SmartModel:
