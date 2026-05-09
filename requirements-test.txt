@@ -1,0 +1,12 @@
+pytest
+pytest-asyncio
+httpx
+asyncpg
+python-jose[cryptography]
+pydantic[email]
+pydantic-settings
+passlib[bcrypt]
+fastapi
+sqlalchemy[asyncio]
+celery
+redis
