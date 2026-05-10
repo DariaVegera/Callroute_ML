@@ -159,6 +159,7 @@ GET  /api/v1/admin/users       — список пользователей
 ## Тесты
 
 Покрыты: auth, billing, predict, admin — около 70%.
+Ветка - coverage
 
 ---
 
