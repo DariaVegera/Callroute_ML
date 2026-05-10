@@ -1,0 +1,25 @@
+{
+  "accuracy": 0.8608,
+  "f1_macro": 0.8709,
+  "model": "CatBoost + TF-IDF",
+  "n_train": 11492,
+  "n_test": 2968,
+  "classes": [
+    "account_management",
+    "entertainment",
+    "general_inquiry",
+    "technical_issue"
+  ],
+  "meta_features": [
+    "char_len",
+    "upper_ratio",
+    "word_count",
+    "punct_count"
+  ],
+  "meta_features_count": 4,
+  "tfidf_max_features": 50000,
+  "tfidf_ngram_range": [
+    1,
+    2
+  ]
+}

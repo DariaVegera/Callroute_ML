@@ -1,0 +1,16 @@
+{
+  "accuracy": 0.9336,
+  "f1_macro": 0.9365,
+  "model": "rubert-tiny2 fine-tuned",
+  "base_model": "cointegrated/rubert-tiny2",
+  "n_train": 11492,
+  "n_test": 2968,
+  "classes": [
+    "account_management",
+    "entertainment",
+    "general_inquiry",
+    "technical_issue"
+  ],
+  "max_input_length": 128,
+  "ood_threshold": 0.55
+}
